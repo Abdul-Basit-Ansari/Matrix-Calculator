@@ -14,11 +14,10 @@
     <script src="index.js"></script>
   </head>
   <body>
-
     <div class="container text-center">
-            <h1 class="mt-4">Matrix Calculator </h1>
-            <h6>By </h6>
-            <h6 class="text-muted">Abdul Basit Ansari </h6>
+      <h1 class="mt-4">Matrix Calculator</h1>
+      <h6>By</h6>
+      <h6 class="text-muted">Abdul Basit Ansari</h6>
       <div class="d-flex justify-content-around flex-column flex-sm-row">
         <form name="A" class="mx-3">
           <p class="my-4">Matrix <b>A</b><br /></p>
@@ -225,8 +224,35 @@
       <div class="mx-3">
         <form name="ReArrange">
           <p class="my-3">Move Matrix</p>
-
           <button
+            type="button"
+            onClick="swap(A,B)"
+            class="btn btn-secondary btn-sm my-1"
+          >
+            A &nbsp; &nbsp; &nbsp;----&gt; &nbsp;&nbsp;&nbsp; B
+          </button>
+          <button
+          type="button"
+          onClick="swap(A,C)"
+          class="btn btn-secondary btn-sm my-1"
+          >
+          A &nbsp; &nbsp; &nbsp;----&gt; &nbsp;&nbsp;&nbsp; C
+        </button>
+        <button
+          type="button"
+          onClick="swap(B,A)"
+          class="btn btn-secondary btn-sm my-1"
+        >
+          B &nbsp; &nbsp; &nbsp;----&gt; &nbsp;&nbsp;&nbsp; A
+        </button>
+        <button
+          type="button"
+          onClick="swap(B,C)"
+          class="btn btn-secondary btn-sm my-1"
+        >
+          B &nbsp; &nbsp; &nbsp;----&gt; &nbsp;&nbsp;&nbsp; C
+        </button>
+        <button
             type="button"
             onClick="swap(C,A)"
             class="btn btn-secondary btn-sm my-1"
@@ -240,27 +266,6 @@
           >
             C &nbsp; &nbsp; &nbsp;----&gt; &nbsp;&nbsp;&nbsp; B
           </button>
-          <button
-            type="button"
-            onClick="swap(A,B)"
-            class="btn btn-secondary btn-sm my-1"
-          >
-            A &nbsp; &nbsp; &nbsp;----&gt; &nbsp;&nbsp;&nbsp; B
-          </button>
-          <button
-            type="button"
-            onClick="swap(B,A)"
-            class="btn btn-secondary btn-sm my-1"
-          >
-            B &nbsp; &nbsp; &nbsp;----&gt; &nbsp;&nbsp;&nbsp; A
-          </button>
-          <button
-            type="button"
-            onClick="swap(A,C)"
-            class="btn btn-secondary btn-sm my-1"
-          >
-            A &nbsp; &nbsp; &nbsp;----&gt; &nbsp;&nbsp;&nbsp; C
-          </button>
         </form>
         <form name="Operations">
           <p class="my-3">Operations</p>
@@ -272,7 +277,7 @@
           >
             A &nbsp; + &nbsp; B &nbsp; = &nbsp; C
           </button>
-         
+
           <button
             type="button"
             onClick="mult(A,B,C)"
@@ -288,25 +293,25 @@
             B &nbsp;x&nbsp; A&nbsp; =&nbsp; C
           </button>
           <button
-          type="button"
-          onClick="adj(A,C)"
-          class="btn btn-primary btn-sm my-1"
-        >
-          adj &nbsp;( &nbsp; A &nbsp;) &nbsp;= &nbsp;C
-        </button>
-        <button
             type="button"
             onClick="inv(A,deta,C)"
             class="btn btn-primary btn-sm my-1"
           >
-            inv&nbsp;(&nbsp;A&nbsp;)&nbsp; =&nbsp; C
+            Inverse&nbsp;(&nbsp;A&nbsp;)&nbsp; =&nbsp; C
           </button>
           <button
             type="button"
             onClick="inv(B,detb,C)"
             class="btn btn-primary btn-sm my-1"
           >
-            inv&nbsp;(&nbsp;B&nbsp;)&nbsp; =&nbsp; C
+            Inverse&nbsp;(&nbsp;B&nbsp;)&nbsp; =&nbsp; C
+          </button>
+          <button
+            type="button"
+            onClick="adj(A,C)"
+            class="btn btn-primary btn-sm my-1"
+          >
+            Adjugate&nbsp;( &nbsp; A &nbsp;) &nbsp;= &nbsp;C
           </button>
         </form>
         <p class="my-3">Determinant</p>
@@ -327,7 +332,7 @@
             />
           </div>
         </form>
-        <form name="detb" class="mb-4">
+        <form name="detb" class="mb-2">
           <div class="input-group">
             <button
               type="button"
@@ -335,6 +340,23 @@
               class="btn btn-success btn-sm"
             >
               Determinant B
+            </button>
+            <input
+              class="form-control form-control-sm text-center"
+              name="output"
+              type="text"
+              placeholder="0"
+            />
+          </div>
+        </form>
+        <form name="detc" class="mb-4">
+          <div class="input-group">
+            <button
+              type="button"
+              onClick="det(C,detc)"
+              class="btn btn-success btn-sm"
+            >
+              Determinant C
             </button>
             <input
               class="form-control form-control-sm text-center"
