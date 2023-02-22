@@ -12,7 +12,7 @@ function read (m1, m2) {
     a31 = parseFloat(m1.a31.value, 10)
     a32 = parseFloat(m1.a32.value, 10)
     a33 = parseFloat(m1.a33.value, 10)
- 
+
  
     b11 = parseFloat(m2.a11.value, 10)
     b12 =  parseFloat(m2.a12.value, 10)
@@ -151,5 +151,5 @@ function read (m1, m2) {
    am3.a32.value = b32 / detval
    am3.a33.value = b33 / detval
  
-         } // ends else
+         }
  }
