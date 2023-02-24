@@ -153,3 +153,9 @@ function read (m1, m2) {
  
          } // ends else
  }
+let isFound = true
+// if(isFound){
+//   console.log("condition True")
+// }
+
+console.log("condition True") && false
